@@ -99,7 +99,7 @@ const translations = {
         "info.format.text": `6 équipes de 5 joueurs<br>3 jours de compétition<br>Du vendredi 21 au dimanche 23 août 2026<br>Clôture officielle : 23h00, dimanche 23 août 2026<br>2 à 3 épreuves majeures par journée à horaires fixes`,
 
         "info.territory.title": "Base et territoire",
-        "info.territory.text": `Chaque équipe revendique une île en ordre d'arrivée.<br>Zone de construction délimitée physiquement sur chaque île (14 X 14 fondations carrées).<br>Construction libre à l'intérieur du périmètre, ainsi qu'autour de la zone (hemp et/ou garage).<br>Au centre de chaque île se trouve un trou correspondant à la zone de banque.<br>Le trou doit être intégré à la construction et rester accessible à tout moment.<br>La zone de banque doit pouvoir être atteinte par des assaillants lors d'un raid.`,
+        "info.territory.text": `Chaque équipe revendique une île en ordre d'arrivée.<br>Zone de construction délimitée physiquement sur chaque île(14 X 14 fondations carrées).<br>Construction libre à l'intérieur du périmètre, ainsi qu'autour de la zone (hemp et/ou garage).<br>Au centre de chaque île se trouve un trou correspondant à la zone de banque.<br>Le trou doit être intégré à la construction et rester accessible à tout moment.<br>La zone de banque doit pouvoir être atteinte par des assaillants lors d'un raid.`,
 
         "info.kills.title": "Système de points — Kills",
         "info.kills.text": `Chaque élimination génère un tag physique sur le lieu du décès.<br>Le tag est ramassable par n'importe quel participant.<br>Le tag doit être déposé dans la zone de banque pour valoir des points.<br>Un tag en inventaire ne rapporte aucun point.<br>Les éliminations entre coéquipiers ne génèrent aucun tag.`,
@@ -266,7 +266,7 @@ const translations = {
         "nav.schedule": "CALENDARIO",
         "nav.teams": "EQUIPOS",
         "nav.register": "REGISTRO",
-        "nav.info": "INFORMACIÒNES",
+        "nav.info": "INFORMACIÓNES",
 
         "page.title": "R.E.C Rivals",
 
