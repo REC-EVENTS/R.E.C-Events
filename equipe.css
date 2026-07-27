@@ -1,0 +1,188 @@
+/* Carte des équipes */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 100%;
+    height: 500px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+    z-index: 2;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card-back {
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid #5f5e42;
+    color: #5f5e42;
+    transform: rotateY(180deg);
+    padding: 16px;
+    text-align: center;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    gap: 0;
+    box-sizing: border-box;
+}
+
+.card-back h2 {
+    color: #c8692a;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    margin-top: 16px;
+    text-align: center;
+    height: 3rem;
+}
+
+.card-divider {
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #5f5e42, transparent);
+    margin-bottom: 12px;
+}
+
+.card-players {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.player.captain {
+    background: rgba(200, 105, 42, 0.08);
+    border: 1px solid rgba(200, 105, 42, 0.2);
+}
+
+.player-icon {
+    font-size: 18px;
+    opacity: 0.6;
+    width: 20px;
+    text-align: center;
+}
+
+.player-name {
+    flex: 1;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 18px;
+    color: #E8E5DB;
+    text-align: left;
+}
+
+.captain-badge {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 8px;
+    color: #c8692a;
+    border: 1px solid #c8692a;
+    padding: 1px 4px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    margin-left: auto;
+}
+
+.team-emblem {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: emblem-blink 3s ease-in-out infinite;
+}
+
+@keyframes emblem-blink {
+    0%   { opacity: 0.15; }
+    50%  { opacity: 0.45; }
+    100% { opacity: 0.15; }
+}
+
+/* Responsive */
+@media (max-width: 1280px) {
+    .cards-container { max-width: 800px; gap: 20px; padding: 30px; }
+    .card { height: 420px; }
+}
+
+@media (max-width: 1024px) {
+    .cards-container { max-width: 700px; gap: 16px; padding: 24px; }
+    .card { height: 360px; }
+    .card-back h2 { font-size: 0.8rem; }
+    .player-name { font-size: 12px; }
+}
+
+@media (max-width: 768px) {
+    .cards-container { grid-template-columns: repeat(2, 1fr); max-width: 500px; gap: 16px; padding: 20px; }
+    .card { height: 300px; }
+    .card-back h2 { font-size: 0.7rem; }
+    .player-name { font-size: 11px; }
+    .player-icon { font-size: 11px; }
+    .captain-badge { font-size: 7px; }
+}
+
+@media (max-width: 480px) {
+    .cards-container { grid-template-columns: repeat(1, 1fr); max-width: 300px; gap: 16px; padding: 16px; }
+    .card { height: 350px; }
+    .card-back h2 { font-size: 0.8rem; }
+    .player-name { font-size: 12px; }
+}

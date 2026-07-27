@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rec Rivals</title>
+        <link rel="stylesheet" href="global.css">
+        <link rel="stylesheet" href="equipe.css">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+        <script src="translations.js"></script>
+        <script src="i18n.js"></script>
+        <script src="countdown.js"></script>
+        <script src="particles.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <nav class="navbar">
+                <div class="nav-links left">
+                    <a href="acceuil-rec-rivals.html" data-i18n="nav.home">ACCUEIL</a>
+                    <a href="reglement.html" data-i18n="nav.rules">REGLEMENT</a>
+                    <a href="planning.html" data-i18n="nav.schedule">PLANNING</a>
+                </div>
+
+                <div class="logo">
+                    <img src="image-REC/rec-rivals-logo.png" alt="R.E.C Rivals">
+                    <div id="countdown" class="countdown"></div>
+                </div>
+
+                <div class="nav-links right">
+                    <a href="equipe.html" class="active" data-i18n="nav.teams">EQUIPES</a>
+                    <a href="https://forms.gle/jfFLSVP6A1LtEV216" target="_blank">
+                        <span data-i18n="nav.register">INSCRIPTION</span>
+                        <span class="ext-icon">&#8599;</span>
+                    </a>
+                    <a href="info.html" data-i18n="nav.info">INFOS</a>
+                </div>
+            </nav>
+        </div>
+
+        <main class="contenu">
+            <img class="bg-image" src="image-REC/fond-site.png" alt="R.E.C Rivals">
+
+            <div class="cards-container">
+
+                <div class="card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="image-REC/IronWolvesBanner.png" alt="Iron Wolves">
+                        </div>
+                        <div class="card-back">
+                            <h2 data-i18n="teams.ironwolves.motto"></h2>
+                            <div class="card-divider"></div>
+                            <div class="card-players">
+                                <div class="player captain">
+                                    <span class="player-icon">⚔</span>
+                                    <span class="player-name">?</span>
+                                    <span class="captain-badge">CAP</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                            </div>
+                            <img class="team-emblem" src="image-REC/loup.png" alt="Iron Wolves">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="image-REC/TaskForceViperBanner.png" alt="Task Force Viper">
+                        </div>
+                        <div class="card-back">
+                            <h2 data-i18n="teams.taskforceviper.motto"></h2>
+                            <div class="card-divider"></div>
+                            <div class="card-players">
+                                <div class="player captain">
+                                    <span class="player-icon">⚔</span>
+                                    <span class="player-name">?</span>
+                                    <span class="captain-badge">CAP</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                            </div>
+                            <img class="team-emblem" src="image-REC/serpent.png" alt="taskforceviper">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="image-REC/RavenCompanyBanner.png" alt="Raven Company">
+                        </div>
+                        <div class="card-back">
+                            <h2 data-i18n="teams.ravencompany.motto"></h2>
+                            <div class="card-divider"></div>
+                            <div class="card-players">
+                                <div class="player captain">
+                                    <span class="player-icon">⚔</span>
+                                    <span class="player-name">?</span>
+                                    <span class="captain-badge">CAP</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                            </div>
+                            <img class="team-emblem" src="image-REC/corbeau.png" alt="Raven Company">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="image-REC/DustRaidersBanner.png" alt="Dust Raiders">
+                        </div>
+                        <div class="card-back">
+                            <h2 data-i18n="teams.dustraid.motto"></h2>
+                            <div class="card-divider"></div>
+                            <div class="card-players">
+                                <div class="player captain">
+                                    <span class="player-icon">⚔</span>
+                                    <span class="player-name">?</span>
+                                    <span class="captain-badge">CAP</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                            </div>
+                            <img class="team-emblem" src="image-REC/renard.png" alt="Dust Raiders">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="image-REC/PhantomUnitBanner.png" alt="Phantom Unit">
+                        </div>
+                        <div class="card-back">
+                            <h2 data-i18n="teams.phantomunit.motto"></h2>
+                            <div class="card-divider"></div>
+                            <div class="card-players">
+                                <div class="player captain">
+                                    <span class="player-icon">⚔</span>
+                                    <span class="player-name">?</span>
+                                    <span class="captain-badge">CAP</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                            </div>
+                            <img class="team-emblem" src="image-REC/hibou.png" alt="Phantom Unit">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="image-REC/BlackTideBanner.png" alt="Black Tide">
+                        </div>
+                        <div class="card-back">
+                            <h2 data-i18n="teams.blacktide.motto"></h2>
+                            <div class="card-divider"></div>
+                            <div class="card-players">
+                                <div class="player captain">
+                                    <span class="player-icon">⚔</span>
+                                    <span class="player-name">?</span>
+                                    <span class="captain-badge">CAP</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                                <div class="player">
+                                    <span class="player-icon">👤</span>
+                                    <span class="player-name">?</span>
+                                </div>
+                            </div>
+                            <img class="team-emblem" src="image-REC/requin.png" alt="Black Tide">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer>
+            <h3 class="copyright" data-i18n="footer.copyright">© 2026 Satomi (L.K.) — Tous droits réservés</h3>
+        </footer>
+    </body>
+</html>

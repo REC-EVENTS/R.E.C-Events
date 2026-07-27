@@ -1,0 +1,143 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenu */
+.contenu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.contenu h1 {
+    text-align: center;
+    padding: 20px 0;
+    color: #F5F2E8;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+/* Carte */
+#map-container {
+    width: 90%;
+    max-width: 900px;
+    height: 700px;
+    margin: 0 auto;
+    border: 1px solid #2C3128;
+    border-radius: 12px;
+    background: #1e414b;
+    overflow: hidden;
+    cursor: grab;
+    position: relative;
+}
+
+#map-img {
+    position: absolute;
+    transform-origin: 0 0;
+    transition: transform 0.05s ease;
+    user-select: none;
+    pointer-events: none;
+}
+
+.info-sections {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(15, 17, 16, 0.75);
+    border-radius: 12px;
+    border: 1px solid #2C3128;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-block {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.info-block h2 {
+    color: #F5F2E8;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+.info-block p {
+    color: #E8E5DB;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.info-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.tier-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+    border: 1px solid #2C3128;
+}
+
+.tier-row.tier-active {
+    background: rgba(200, 105, 42, 0.08);
+    border: 1px solid rgba(200, 105, 42, 0.3);
+}
+
+.tier-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    color: #c8692a;
+    letter-spacing: 2px;
+    min-width: 60px;
+}
+
+.tier-detail {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 14px;
+    color: #E8E5DB;
+}
+
+.tier-note {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 13px;
+    color: #7C8264;
+    font-style: italic;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #2C3128, transparent);
+    border: none;
+    margin: 16px 0;
+}
+
+@media (max-width: 768px) {
+    .info-sections { padding: 20px; margin: 20px auto; }
+    .info-block h2 { font-size: 0.85rem; }
+    .info-block p { font-size: 14px; }
+    .tier-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .tier-detail { font-size: 12px; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #map-container { height: 400px; width: 95%; }
+}
+
+@media (max-width: 480px) {
+    #map-container { height: 300px; }
+}

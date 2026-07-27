@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>R.E.C Rivals</title>
+        <link rel="stylesheet" href="global.css">
+        <link rel="stylesheet" href="info.css">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+        <script src="translations.js"></script>
+        <script src="i18n.js"></script>
+        <script src="countdown.js"></script>
+        <script src="particles.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <nav class="navbar">
+                <div class="nav-links left">
+                    <a href="acceuil-rec-rivals.html" data-i18n="nav.home">ACCUEIL</a>
+                    <a href="reglement.html" data-i18n="nav.rules">REGLEMENT</a>
+                    <a href="planning.html" data-i18n="nav.schedule">PLANNING</a>
+                </div>
+
+                <div class="logo">
+                    <img src="image-REC/rec-rivals-logo.png" alt="R.E.C Rivals">
+                    <div id="countdown" class="countdown"></div>
+                </div>
+
+                <div class="nav-links right">
+                    <a href="equipe.html" data-i18n="nav.teams">EQUIPES</a>
+                    <a href="https://forms.gle/jfFLSVP6A1LtEV216" target="_blank">
+                        <span data-i18n="nav.register">INSCRIPTION</span>
+                        <span class="ext-icon">&#8599;</span>
+                    </a>
+                    <a href="info.html" class="active" data-i18n="nav.info">INFOS</a>
+                </div>
+            </nav>
+        </div>
+
+        <img class="bg-image" src="image-REC/fond-site.png" alt="R.E.C Rivals">
+
+        <main class="contenu">
+            <h1 data-i18n="info.title">Map Officielle</h1>
+
+            <div id="map-container">
+                <img id="map-img" src="image-REC/map_Rec_Rivals.png" alt="Carte R.E.C Rivals">
+            </div>
+
+            <div class="info-sections">
+
+                <div class="info-block">
+                    <h2 data-i18n="info.format.title">Format</h2>
+                    <p data-i18n="info.format.text"></p>
+                </div>
+
+                <hr>
+
+                <div class="info-block">
+                    <h2 data-i18n="info.territory.title">Base et territoire</h2>
+                    <p data-i18n="info.territory.text"></p>
+                </div>
+
+                <hr>
+
+                <div class="info-block">
+                    <h2 data-i18n="info.kills.title">Système de points — Kills</h2>
+                    <p data-i18n="info.kills.text"></p>
+                </div>
+
+                <hr>
+
+                <div class="info-block">
+                    <h2 data-i18n="info.events.title">Système de points — Épreuves</h2>
+                    <p data-i18n="info.events.text"></p>
+                </div>
+
+                <hr>
+
+                <div class="info-block">
+                    <h2 data-i18n="info.tiers.title">Progression par paliers</h2>
+                    <div class="info-tiers">
+                        <div class="tier-row">
+                            <span class="tier-name">TIER 1</span>
+                            <span class="tier-detail" data-i18n="info.tiers.t1">Établissement max niveau 1 — Raid autorisé — Vol de points désactivé</span>
+                        </div>
+                        <div class="tier-row">
+                            <span class="tier-name">TIER 2</span>
+                            <span class="tier-detail" data-i18n="info.tiers.t2">Établissement max niveau 2 — Raid autorisé — Vol de points désactivé</span>
+                        </div>
+                        <div class="tier-row tier-active">
+                            <span class="tier-name">TIER 3</span>
+                            <span class="tier-detail" data-i18n="info.tiers.t3">Établissement max niveau 3 — Raid autorisé — Vol de points activé (3 dernières heures)</span>
+                        </div>
+                    </div>
+                    <p class="tier-note" data-i18n="info.tiers.note">Les paliers sont activés manuellement par les organisateurs.</p>
+                </div>
+
+                <hr>
+
+                <div class="info-block">
+                    <h2 data-i18n="info.night.title">Protection nocturne</h2>
+                    <p data-i18n="info.night.text"></p>
+                </div>
+
+                <hr>
+
+                <div class="info-block">
+                    <h2 data-i18n="info.final.title">Phase finale — Vol de points</h2>
+                    <p data-i18n="info.final.text"></p>
+                </div>
+
+                <hr>
+
+                <div class="info-block">
+                    <h2 data-i18n="info.ranking.title">Classement</h2>
+                    <p data-i18n="info.ranking.text"></p>
+                </div>
+
+                <hr>
+
+                <div class="info-block">
+                    <h2 data-i18n="info.victory.title">Condition de victoire</h2>
+                    <p data-i18n="info.victory.text"></p>
+                </div>
+
+            </div>
+        </main>
+
+        <footer>
+            <h3 class="copyright" data-i18n="footer.copyright">© 2026 Satomi (L.K.) — Tous droits réservés</h3>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+
+            const container = document.getElementById('map-container');
+            const img = document.getElementById('map-img');
+            let scale = 1, startX, startY, translateX = 0, translateY = 0, isDragging = false;
+
+            const zones = [
+                { id: 'zone1', x: 48, y: 2,  w: 8, h: 8, key: 'map.zone1', images: ['image-REC/ile1.png', 'image-REC/ile1.2.png'] },
+                { id: 'zone2', x: 86, y: 23, w: 8, h: 8, key: 'map.zone2', images: ['image-REC/ile2.png', 'image-REC/ile2.2.png'] },
+                { id: 'zone3', x: 88, y: 68, w: 8, h: 8, key: 'map.zone3', images: ['image-REC/ile3.png', 'image-REC/ile3.3.png'] },
+                { id: 'zone4', x: 48, y: 88, w: 8, h: 8, key: 'map.zone4', images: ['image-REC/ile4.png', 'image-REC/ile4.4.png'] },
+                { id: 'zone5', x: 10, y: 66, w: 8, h: 8, key: 'map.zone5', images: ['image-REC/ile5.png', 'image-REC/ile5.5.png'] },
+                { id: 'zone6', x: 10, y: 23, w: 8, h: 8, key: 'map.zone6', images: ['image-REC/ile6.png', 'image-REC/ile6.6.png'] },
+            ];
+
+            const popup = document.createElement('div');
+            popup.id = 'map-popup';
+            popup.style.cssText = `
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(15, 17, 16, 0.95);
+                border: 1px solid #2C3128;
+                border-radius: 12px;
+                padding: 20px;
+                z-index: 9999;
+                text-align: center;
+                min-width: 420px;
+            `;
+            popup.innerHTML = `
+                <h2 id="popup-title" style="color:#F5F2E8; font-family:'Orbitron',sans-serif; margin-bottom:12px;"></h2>
+                <div style="position:relative;">
+                    <img id="popup-img" src="" style="width:100%; border-radius:8px; border:1px solid #2C3128;">
+                    <button id="popup-prev" style="position:absolute; left:8px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.6); border:1px solid #c8692a; color:#c8692a; border-radius:6px; cursor:pointer; font-size:18px; padding:4px 10px;">&#8249;</button>
+                    <button id="popup-next" style="position:absolute; right:8px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.6); border:1px solid #c8692a; color:#c8692a; border-radius:6px; cursor:pointer; font-size:18px; padding:4px 10px;">&#8250;</button>
+                </div>
+                <div id="popup-dots" style="margin-top:8px; display:flex; justify-content:center; gap:6px;"></div>
+                <button id="popup-close" style="margin-top:14px; padding:8px 20px; background:transparent; border:1px solid #c8692a; color:#c8692a; border-radius:6px; cursor:pointer; font-family:'Orbitron',sans-serif;"></button>
+            `;
+            document.body.appendChild(popup);
+
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+                display: none;
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                background: rgba(0,0,0,0.6);
+                z-index: 9998;
+            `;
+            document.body.appendChild(overlay);
+
+            let currentImages = [];
+            let currentIndex = 0;
+
+            function getLang() {
+                return localStorage.getItem('lang') || 'fr';
+            }
+
+            function updateCarousel() {
+                document.getElementById('popup-img').src = currentImages[currentIndex];
+                const dots = document.getElementById('popup-dots');
+                dots.innerHTML = '';
+                currentImages.forEach(function (_, i) {
+                    const dot = document.createElement('span');
+                    dot.style.cssText = `
+                        width: 8px; height: 8px; border-radius: 50%;
+                        background: ${i === currentIndex ? '#c8692a' : '#2C3128'};
+                        display: inline-block; cursor: pointer;
+                        transition: background 0.2s;
+                    `;
+                    dot.addEventListener('click', function () {
+                        currentIndex = i;
+                        updateCarousel();
+                    });
+                    dots.appendChild(dot);
+                });
+            }
+
+            function updatePopupLang() {
+                const lang = getLang();
+                const titleEl = document.getElementById('popup-title');
+                const closeEl = document.getElementById('popup-close');
+                if (popup.style.display === 'block' && titleEl.dataset.key) {
+                    titleEl.textContent = translations[lang][titleEl.dataset.key];
+                }
+                if (closeEl) {
+                    closeEl.textContent = translations[lang]['map.close'];
+                }
+            }
+
+            document.getElementById('popup-prev').addEventListener('click', function () {
+                currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+                updateCarousel();
+            });
+
+            document.getElementById('popup-next').addEventListener('click', function () {
+                currentIndex = (currentIndex + 1) % currentImages.length;
+                updateCarousel();
+            });
+
+            document.getElementById('popup-close').addEventListener('click', closePopup);
+            overlay.addEventListener('click', closePopup);
+
+            function closePopup() {
+                popup.style.display = 'none';
+                overlay.style.display = 'none';
+            }
+
+            window.addEventListener('langchange', updatePopupLang);
+
+            const zonesContainer = document.createElement('div');
+            zonesContainer.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; z-index:10;';
+            container.appendChild(zonesContainer);
+
+            function updateZones() {
+                zonesContainer.innerHTML = '';
+                zones.forEach(function (z) {
+                    const div = document.createElement('div');
+                    const imgW = img.naturalWidth * scale;
+                    const imgH = img.naturalHeight * scale;
+                    const left = translateX + (z.x / 100) * imgW;
+                    const top = translateY + (z.y / 100) * imgH;
+                    const width = (z.w / 100) * imgW;
+                    const height = (z.h / 100) * imgH;
+
+                    div.style.cssText = `
+                        position: absolute;
+                        left: ${left}px;
+                        top: ${top}px;
+                        width: ${width}px;
+                        height: ${height}px;
+                        border: 2px solid #2C3128;
+                        border-radius: 4px;
+                        background: rgba(15, 17, 16, 0.15);
+                        cursor: pointer;
+                        transition: background 0.2s;
+                    `;
+                    div.addEventListener('mouseenter', function () {
+                        div.style.background = 'rgba(200, 105, 42, 0.35)';
+                    });
+                    div.addEventListener('mouseleave', function () {
+                        div.style.background = 'rgba(15, 17, 16, 0.15)';
+                    });
+                    div.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        const lang = getLang();
+                        const titleEl = document.getElementById('popup-title');
+                        titleEl.textContent = translations[lang][z.key];
+                        titleEl.dataset.key = z.key;
+                        document.getElementById('popup-close').textContent = translations[lang]['map.close'];
+                        currentImages = z.images;
+                        currentIndex = 0;
+                        updateCarousel();
+                        popup.style.display = 'block';
+                        overlay.style.display = 'block';
+                    });
+                    zonesContainer.appendChild(div);
+                });
+            }
+
+            function initMap() {
+                const scaleX = container.clientWidth / img.naturalWidth;
+                const scaleY = container.clientHeight / img.naturalHeight;
+                scale = Math.min(scaleX, scaleY);
+                translateX = (container.clientWidth - img.naturalWidth * scale) / 2;
+                translateY = (container.clientHeight - img.naturalHeight * scale) / 2;
+                img.style.transformOrigin = '0 0';
+                img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                updateZones();
+            }
+
+            window.addEventListener('load', initMap);
+            window.addEventListener('resize', initMap);
+
+            container.addEventListener('wheel', function (e) {
+                e.preventDefault();
+                const rect = container.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                const prevScale = scale;
+                scale += e.deltaY * -0.001;
+                scale = Math.min(Math.max(0.1, scale), 4);
+                translateX = mouseX - (mouseX - translateX) * (scale / prevScale);
+                translateY = mouseY - (mouseY - translateY) * (scale / prevScale);
+                img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                updateZones();
+            });
+
+            container.addEventListener('mousedown', function (e) {
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                container.style.cursor = 'grabbing';
+            });
+
+            container.addEventListener('mousemove', function (e) {
+                if (!isDragging) return;
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                updateZones();
+            });
+
+            window.addEventListener('mouseup', function () {
+                isDragging = false;
+                container.style.cursor = 'grab';
+            });
+
+            let lastTouchX, lastTouchY;
+            container.addEventListener('touchstart', function (e) {
+                lastTouchX = e.touches[0].clientX - translateX;
+                lastTouchY = e.touches[0].clientY - translateY;
+            });
+
+            container.addEventListener('touchmove', function (e) {
+                e.preventDefault();
+                translateX = e.touches[0].clientX - lastTouchX;
+                translateY = e.touches[0].clientY - lastTouchY;
+                img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                updateZones();
+            }, { passive: false });
+
+        });
+    </script>
+    </body>
+</html>

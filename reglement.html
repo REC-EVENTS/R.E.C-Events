@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Règlement</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="reglement.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
+    <script src="countdown.js"></script>
+    <script src="particles.js"></script>
+    
+</head>
+<body>
+    <div class="main">
+        <nav class="navbar">
+            <div class="nav-links left">
+                <a href="acceuil-rec-rivals.html" data-i18n="nav.home">ACCUEIL</a>
+                <a href="reglement.html" class="active" data-i18n="nav.rules">REGLEMENT</a>
+                <a href="planning.html" data-i18n="nav.schedule">PLANNING</a>
+            </div>
+
+            <div class="logo">
+                <img src="image-REC/rec-rivals-logo.png" alt="R.E.C Rivals">
+                <div id="countdown" class="countdown"></div>
+            </div>
+
+            <div class="nav-links right">
+                <a href="equipe.html" data-i18n="nav.teams">EQUIPES</a>
+                <a href="https://forms.gle/jfFLSVP6A1LtEV216" target="_blank">
+                    <span data-i18n="nav.register">INSCRIPTION</span>
+                    <span class="ext-icon">&#8599;</span>
+                </a>
+                <a href="info.html" data-i18n="nav.info">INFOS</a>
+            </div>
+        </nav>
+
+        <img class="bg-image" src="image-REC/fond-site.png" alt="R.E.C Rivals">
+
+        <main class="contenu">
+            <h1 data-i18n="rules.title">RÈGLEMENT OFFICIEL - R.E.C RIVALS 2026</h1>
+
+            <h2 data-i18n="rules.respect.title">RESPECT ET COMPORTEMENT</h2>
+            <p data-i18n="rules.respect.text">
+                La participation aux R.E.C Rivals implique le respect de tous les participants, 
+                des organisateurs et des spectateurs. Aucun comportement toxique ne sera toléré. 
+                Les insultes, le harcèlement, les menaces ainsi que tout propos raciste, homophobe, 
+                transphobe, xénophobe ou discriminatoire sont strictement interdits.
+                <br>
+                Toute attitude contraire à l'esprit de l'événement pourra entraîner une sanction immédiate.
+                <br>
+                Toute action visant à contourner l'esprit de la compétition, même si elle n'est pas 
+                explicitement interdite dans le présent règlement, pourra être considérée comme antisportive 
+                et faire l'objet d'une sanction.
+                <br>
+                Le streamsniping est strictement interdit.
+                <br>
+                Dès leur connexion au serveur Rust, les joueurs doivent obligatoirement être présents dans le 
+                salon vocal de leur équipe sur le Discord R.E.C Events, et ce pendant toute la durée de l'événement.
+                <br>
+                En participant à cet event, vous acceptez d'être potentiellement filmé/enregistré (voix, gameplay) et 
+                diffusé en stream et YouTube par l'organisation. Toute demande de retrait d'un passage vous concernant 
+                peut être faite après coup.
+                
+            </p>
+
+            <hr>
+
+            <h2 data-i18n="rules.base.title">CONSTRUCTION DES BASES</h2>
+            <p data-i18n="rules.base.text">
+                Chaque équipe doit construire sa base principale sur l'île que son équipe a reclamée. La banque
+                (trou central) doit obligatoirement être intégrée à la construction et rester accessible à tout 
+                moment.
+                <br>
+                Il est interdit de construire directement dans la banque, d'en condamner l'accès on de rendre son 
+                utilisation impossible (pas de digicode sur la trappe !).
+            </p>
+
+            <hr>
+
+            <h2 data-i18n="rules.raids.title">RAIDS</h2>
+            <p data-i18n="rules.raids.text">
+                Les raids sont autorisés dès le début du tournoi, à l'exception de la période de protection 
+                nocturne, active chaque nuit de 01h00 à 10h00 (CEST).
+                <br>
+                Le grief est interdit. Toute action visant à rendre une base définitivement inutilisable ou à empêcher 
+                une équipe de continuer à jouer sera sanctionnée.
+            </p>
+
+            <hr>
+
+            <h2 data-i18n="rules.points.title">SYSTÈME DE POINTS</h2>
+            <p data-i18n="rules.points.text">
+                Les points sont obtenus grâce aux épreuves officielles ainsi qu'aux tags récupérés sur les joueurs 
+                éliminés.
+                <br>
+                Un tag ne rapporte des points qu'après avoir été déposé dans la banque de son équipe. Les éliminations 
+                entre membres d'une même équipe ne génèrent aucun tag.
+                <br>
+                Le vol des points stockés dans les banques est impossible avant la phase finale.
+            </p>
+
+            <hr>
+
+            <h2 data-i18n="rules.steal.title">VOL DE POINTS</h2>
+            <p data-i18n="rules.steal.text">
+                Le vol de points est uniquement autorisé durant les trois dernières heure du tournoi.
+                <br>
+                Pour réussir un vol, une équipe doit atteindre la banque adverse, lancer un canalisation et 
+                la maintenir pendant cinq minutes sans interruption. En cas de mort ou de sortie de la zone, 
+                la canalisation est immédiatement annulée. L'équipe attaquée est automatiquement avertie 
+                dès le début de la canalisation.
+            </p>
+
+            <hr>
+
+            <h2 data-i18n="rules.cheat.title">TRICHE ET EXPLOITS</h2>
+            <p data-i18n="rules.cheat.text">
+                Toute forme de triche est strictement interdite. Cela comprend notamment les logiciels tiers, 
+                les scripts, les exploits de bugs ainsi que toute tentative d'obtenir un avantage déloyal.
+                <br>
+                L'ensemble des règles officielles de Facepunch s'applique pendant toute la durée de l'évenement.
+                <br>
+                Tout bug ou comportement anormal du serveur doit être signalé à l'organisation. Son utilisation volontaire, 
+                même une seule fois, pourra entraîner une sanction.
+            </p>
+
+            <hr>
+
+            <h2 data-i18n="rules.restrict.title">RESTRICTIONS</h2>
+            <p data-i18n="rules.restrict.text">
+                Il est interdit de construire dans la banque, de quitter l'île principale pour rejoindre une 
+                île extérieure ou une zone non prévue pour le tournoi, ainsi que de contourner volontairement 
+                les mécaniques mises en place par les organisateurs.
+                <br>
+                Toute tentative de manipulation de classement ou des règles sera sanctionnée.
+            </p>
+
+            <hr>
+            
+            <h2 data-i18n="rules.disconect.title">DECONNEXIONS</h2>
+            <p data-i18n="rules.disconect.text">
+                Les déconnexions, crashs ou problèmes de connexion des joueurs relèvent de leur responsabilité. 
+                Aucun événement ou épreuve ne sera relancé pour ce motif, sauf si le problème provient du serveur 
+                ou d'un incident technique général.
+            </p>
+            
+            <hr>
+            
+            <h2 data-i18n="rules.claims.title">RÉCLAMATIONS</h2>
+            <p data-i18n="rules.claims.text">
+                Toute contestation ou réclamation doit être adressée directement aux organisateurs dans le calme 
+                et le respect. Les décisions prises par l'organisation sont définitives et ne pourront faire 
+                l'object d'aucun recours.
+            </p>
+
+            <hr>
+
+            <h2 data-i18n="rules.sanctions.title">SANCTIONS</h2>
+            <p data-i18n="rules.sanctions.text">
+                Selon la gravité des faits, les organisateurs se réservent le droit d'appliquer toute sanction 
+                qu'ils jugeront nécessaire, pouvant aller d'un simple avertissement jusqu'à l'exclusion 
+                définitive du tournoi.
+                <br>
+                La participation aux R.E.C Rivals implique l'acceptation pleine et entière du présent 
+                règlement.
+                <br>
+                Les organisateurs peuvent modifier ou compléter le règlement si une situation imprévue survient.
+                <br>
+                Toute décision prise par l'organisation est définitive.
+            </p>
+        </main>
+    </div>
+
+    <footer>
+        <h3 class="copyright" data-i18n="footer.copyright">© 2026 Satomi (L.K.) — Tous droits réservés</h3>
+    </footer>
+</body>
+</html>
