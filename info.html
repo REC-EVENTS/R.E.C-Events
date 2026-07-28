@@ -131,7 +131,7 @@
         </footer>
 
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function () {
 
             const container = document.getElementById('map-container');
             const img = document.getElementById('map-img');
@@ -342,21 +342,56 @@
                 container.style.cursor = 'grab';
             });
 
-            let lastTouchX, lastTouchY;
+            let lastTouchX, lastTouchY, lastPinchDist = null;
+
             container.addEventListener('touchstart', function (e) {
-                lastTouchX = e.touches[0].clientX - translateX;
-                lastTouchY = e.touches[0].clientY - translateY;
+                if (e.touches.length === 1) {
+                    lastTouchX = e.touches[0].clientX - translateX;
+                    lastTouchY = e.touches[0].clientY - translateY;
+                    lastPinchDist = null;
+                } else if (e.touches.length === 2) {
+                    lastPinchDist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+                }
             });
 
             container.addEventListener('touchmove', function (e) {
                 e.preventDefault();
-                translateX = e.touches[0].clientX - lastTouchX;
-                translateY = e.touches[0].clientY - lastTouchY;
-                img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-                updateZones();
+
+                if (e.touches.length === 1 && lastPinchDist === null) {
+                    translateX = e.touches[0].clientX - lastTouchX;
+                    translateY = e.touches[0].clientY - lastTouchY;
+                    img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                    updateZones();
+                } else if (e.touches.length === 2) {
+                    const dist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+
+                    if (lastPinchDist) {
+                        const pinchScale = dist / lastPinchDist;
+                        const prevScale = scale;
+                        scale = Math.min(Math.max(0.1, scale * pinchScale), 4);
+
+                        const rect = container.getBoundingClientRect();
+                        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2 - rect.left;
+                        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2 - rect.top;
+
+                        translateX = midX - (midX - translateX) * (scale / prevScale);
+                        translateY = midY - (midY - translateY) * (scale / prevScale);
+
+                        img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+                        updateZones();
+                    }
+
+                    lastPinchDist = dist;
+                }
             }, { passive: false });
 
         });
-    </script>
+        </script>
     </body>
 </html>
