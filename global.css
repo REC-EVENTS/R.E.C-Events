@@ -174,6 +174,53 @@ footer {
   bottom: 0;
 }
 
+/* Bouton en bas à droite  */
+.discord-btn-global {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #5865F2; /* Couleur officielle Discord */
+    color: #ffffff !important;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 9999; /* Reste au-dessus du contenu du site */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Taille icône SVG */
+.discord-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Effet survol  */
+.discord-btn-global:hover {
+    transform: scale(1.05);
+    background-color: #4752C4; /* Discord un peu plus foncé */
+}
+
+/* Version Mobile : On cache le texte pour ne garder que l'icône ronde */
+@media (max-width: 600px) {
+    .discord-text {
+        display: none;
+    }
+    .discord-btn-global {
+        padding: 12px;
+        border-radius: 50%;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
 /* Glow titre */
 @keyframes glow {
   0%   { filter: drop-shadow(0 0 4px rgba(245, 242, 232, 0.2)); }

@@ -124,6 +124,8 @@ const translations = {
 
         "info.victory.title": "Condition de victoire",
         "info.victory.text": `L'équipe avec le plus de points à 23h00 le dimanche 23 août 2026 est déclarée championne des R.E.C Rivals.<br>Une seule équipe remporte le titre.`,
+    
+        "discord.button": "Rejoindre le Discord",
     },
     en: {
 
@@ -254,6 +256,8 @@ const translations = {
 
         "info.victory.title": "Victory condition",
         "info.victory.text": `The team with the most points at 11:00 PM on Sunday August 23, 2026 is declared champion of R.E.C Rivals.<br>Only one team wins the title.`,
+    
+        "discord.button": "Join the Discord",
     },
 
     es: {
@@ -382,6 +386,8 @@ const translations = {
 
         "info.victory.title": "Condición de victoria",
         "info.victory.text": `El equipo con más puntos a las 23:00 del domingo 23 de agosto de 2026 es declarado campeón de R.E.C Rivals.<br>Solo un equipo gana el título.`,
+    
+        "discord.button": "Unirse al Discord",
     },
 
 };
